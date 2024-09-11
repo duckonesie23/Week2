@@ -5,18 +5,25 @@ public class SumofCubes{
         Scanner input = new Scanner(System.in);
         System.out.print("Enter a number: ");
         int num= input.nextInt();
-        int temporary = num;
         int sum = 0;
         input.close();
+
+        while(num!=0){
+            int digit = num%10;
+            digit = digit*digit*digit;
+            num/=10;
+            sum += digit;
+        }
+        System.out.println(sum);
         
-        for(int i=0; num%Math.pow(10,i) != num;++i){
+        /*for(int i=0; num%Math.pow(10,i) != num;++i){
             int place =  temporary % (int)Math.pow(10,i+1);
             temporary -= place;
             place = place/(int)Math.pow(10,i);
             sum += place*place*place;
             //System.out.println(sum);
         }
-        System.out.println(sum);
+        System.out.println(sum);*/
     }
 }
 
